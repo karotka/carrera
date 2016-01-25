@@ -1,0 +1,79 @@
+html, body {
+    font-family: Verdana, Arial,"MS Trebuchet",sans-serif;
+    margin: 0px;
+    color: white;
+    background: black;
+}
+
+.header {
+    text-align: center;
+}
+
+h1 {
+    margin: 0px;
+    padding: 0 0 8px 1px;
+}
+.page {
+    padding: 0px;
+    text-align: center;
+    width: 100%;
+}
+.id {
+    text-align: center;
+    padding: 9px;
+}
+
+.logo {
+    float: left;
+    width: 30em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    float: left;
+    font-size: 2.2em;
+    padding: 0.1em;
+}
+
+th {
+    text-align: right;
+    background: #444444;
+    border: 1px solid white;
+    padding: 0.1em;
+}
+
+td {
+    text-align: right;
+    border: 1px solid white;
+    padding: 0.1em;
+}
+
+.td1 {
+    background: blue;
+}
+
+.td2 {
+    background: red;
+}
+
+.td3 {
+    background: yellow;
+    color: black;
+}
+
+.td4 {
+    background: green;
+}
+
+.inl {
+    padding-top: 1em;
+}
+
+#race {
+    padding: 0;
+    text-align: center;
+    font-size: 6em;
+    font-weight: bold;
+}
+

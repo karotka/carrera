@@ -1,0 +1,54 @@
+<html>
+<head>
+
+<script>
+    var wsUrl = '__WS__';
+</script>
+<script type="text/javascript" src="/static/js/socket.io-1.0.4.js"></script>
+<script src="/static/js/angular.min.js"></script>
+<script src="/static/js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/styles.css" media="screen, projection" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body ng-app="app">
+    <div class="page" id="sc" ng-controller="MyCtrl">
+        <div class="header">
+            <img src="/static/img/logo.png" class="logo">
+            <div id="race">{{race}}</span>
+        </div>
+
+        <table>
+            <tr>
+                <th>Pos.</th>
+                <th>No</th>
+                <th>Laps</th>
+                <th>Time</th>
+                <th>Lap time</th>
+                <th>Best Lap</th>
+                <th>Pit</th>
+                <th>Fuel</th>
+            </tr>
+            <tr ng-repeat="driver in drivers">
+                <td class="td{{driver.num}}">{{driver.pos}}</td>
+                <td class="td{{driver.num}}">{{driver.num}}</td>
+                <td class="td{{driver.num}}">{{driver.laps}}</td>
+                <td class="td{{driver.num}}">{{driver.time}}</td>
+                <td class="td{{driver.num}}">{{driver.lapTime}}</td>
+                <td class="td{{driver.num}}">{{driver.bestLap}}</td>
+                <td class="td{{driver.num}}">{{driver.pit}}</td>
+                <td class="td{{driver.num}}">{{driver.fuel}}%</td>
+            </tr>
+        </table>
+
+        <div class="inl">
+            <img src="{{startImg}}" ng-mousedown="start()" width="100">
+&nbsp; &nbsp;            <img src="/static/img/reset.png" ng-mousedown="rst()" width="100">
+        
+        </div>
+
+    </div>
+  </body>
+</html>
