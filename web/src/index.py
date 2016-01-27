@@ -4,8 +4,7 @@ from gevent import monkey
 monkey.patch_all()
 import ConfigParser
 from myapp import baseApp
-from rms   import RMS
-from flask import Flask, render_template, g
+from flask import Flask, render_template
 
 from flask.ext.socketio import SocketIO, emit
 from logging.handlers import RotatingFileHandler
@@ -29,9 +28,6 @@ app = Flask(
 socketio = SocketIO(app)
 log = logging.getLogger(__name__)
 
-#cu = ControlUnit(baseApp.config.get("Serial", "Device"))
-#rms = RMS(cu)
-
 @app.route('/')
 def index():
     page = open('../templates/index.html').read()
@@ -48,31 +44,18 @@ def connect():
 
 @socketio.on('send:request', namespace='/ws')
 def request(message):
-    #print "RMS: >>>>> %s" % rms
-    #data = rms.cu.request()
-    #if isinstance(data, ControlUnit.Status):
-    #    #log.info("Handle Status %s " % str(data))
-    #    rms.handleStatus(data)
-    #elif isinstance(data, ControlUnit.Timer):
-    #    #print data
-    #    #log.info("Handle Timer %s " % str(data))
-    #    rms.handleTimer(data)
     data = r.get('drivers')
-    #data = rms.getData()
-    #print data
     emit('init', data, broadcast = True)
 
 @socketio.on('send:start', namespace='/ws')
 def sendStart(message):
     log.info("Handle Start ... ")
     r.set("start", 1)
-    #rms.cu.start()
 
 @socketio.on('send:reset', namespace='/ws')
 def reset(message):
     log.info("Handle Reset ... %s" % message)
     r.set("reset", 1)
-    #rms.reset()
 
 @socketio.on('disconnect', namespace='/ws')
 def disconnect():
@@ -80,7 +63,6 @@ def disconnect():
 
 if __name__ == '__main__':
     app.debug = bool(baseApp.config.getint("Log", "AppDebug"))
-
 
     handler = RotatingFileHandler(baseApp.config.get("Log", "LogFile"), maxBytes = 10000, backupCount = 1)
     handler.setLevel(logging.INFO)

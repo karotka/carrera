@@ -113,9 +113,6 @@ class RMS(object):
                 last = data
             except TimeoutError, e:
                 raise
-            #except IOError as e:
-            #    if e.errno != errno.EINTR:
-            #        raise
             self.update()
 
     def reset(self):
@@ -166,6 +163,4 @@ if __name__ == "__main__":
             rms.run()
         except TimeoutError:
             sleep(3)
-            #print "Timeout error"
             rms = createInstance()
-
