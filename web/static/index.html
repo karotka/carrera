@@ -1,0 +1,60 @@
+<html>
+<style>
+body {background-color: black;}
+p {
+    text-align: center;
+    font-size: 10em;
+}
+
+.myButton {
+    -moz-box-shadow:inset 0px -3px 7px 0px #ff2b2b;
+    -webkit-box-shadow:inset 0px -3px 7px 0px #ff2b2b;
+    box-shadow:inset 0px -3px 7px 0px #ff2b2b;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff0000), color-stop(1, #fa0808));
+    background:-moz-linear-gradient(top, #ff0000 5%, #fa0808 100%);
+    background:-webkit-linear-gradient(top, #ff0000 5%, #fa0808 100%);
+    background:-o-linear-gradient(top, #ff0000 5%, #fa0808 100%);
+    background:-ms-linear-gradient(top, #ff0000 5%, #fa0808 100%);
+    background:linear-gradient(to bottom, #ff0000 5%, #fa0808 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0000', endColorstr='#fa0808',GradientType=0);
+    background-color:#ff0000;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    border:1px solid #0b0e07;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:28px;
+    font-weight:bold;
+    padding:9px 23px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #263666;
+}
+.myButton:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fa0808), color-stop(1, #ff0000));
+    background:-moz-linear-gradient(top, #fa0808 5%, #ff0000 100%);
+    background:-webkit-linear-gradient(top, #fa0808 5%, #ff0000 100%);
+    background:-o-linear-gradient(top, #fa0808 5%, #ff0000 100%);
+    background:-ms-linear-gradient(top, #fa0808 5%, #ff0000 100%);
+    background:linear-gradient(to bottom, #fa0808 5%, #ff0000 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa0808', endColorstr='#ff0000',GradientType=0);
+    background-color:#fa0808;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+
+</style>
+<body>
+<p>
+<a class="myButton" href="#" onclick="document.location.reload(true);">START</a>
+</p>
+
+
+<script>
+window.open('http://172.16.0.215:8080','winname','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=800,height=600');
+</script>
+</body>
+</html>

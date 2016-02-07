@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Carrera
+Exec=/home/pi/carrera/bin/carrera.sh
+Icon=/home/pi/carrera/static/img/icon.xpm
+Type=Application
+Terminal=false
+Categories=None;
+
